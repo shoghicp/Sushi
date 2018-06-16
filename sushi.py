@@ -38,7 +38,7 @@ else:
 
 ALLOWED_ERROR = 0.01
 MAX_GROUP_STD = 0.025
-VERSION = '0.5.1'
+VERSION = '0.5.2'
 
 
 class ColoredLogFormatter(logging.Formatter):
