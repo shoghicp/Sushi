@@ -463,7 +463,8 @@ def calculate_shifts(src_stream, dst_stream, groups_list, normal_window, max_win
             terminate = abs_diff(left_side_time, right_side_time) <= ALLOWED_ERROR and abs_diff(new_time, left_side_time) <= ALLOWED_ERROR
             log_uncommitted(group_state, new_time - original_time, left_side_time - original_time,
                             right_side_time - original_time, start_offset)
-
+        if new_time is None:
+          new_time = original_time
         shift = new_time - original_time
         if not terminate:
             # we aren't back on track yet - add this group to uncommitted
