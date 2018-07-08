@@ -236,7 +236,7 @@ class AssScript(ScriptBase):
                     elif re.match(r'\[.+?\]', low):
                         parse_function = create_generic_parse(line)
                     elif not parse_function:
-                        raise SushiError("That's some invalid ASS script: {0} [line {1}]".format(e.message, line_idx))
+                        raise SushiError("That's some invalid ASS script: {0} [line {1}]".format(line, line_idx))
                     else:
                         try:
                             parse_function(line)
